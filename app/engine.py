@@ -114,9 +114,9 @@ def get():
     # print(combo)
     # print(carList[0])
     # return carList
-    ret = json.dumps(carList)
-    ret.headers.add("Access-Control-Allow-Origin", "*")
-    return ret
+    # ret = json.dumps(carList)
+    # ret.headers.add("Access-Control-Allow-Origin", "*")
+    return json.dumps(carList)
 
 # if __name__ == "__main__":
 #     app.run()heroku
