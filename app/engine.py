@@ -64,7 +64,7 @@ def get():
     listingCount, featureCount = df.shape
     csvData = df
     features = []
-    for index, row in csvData.iterrows():
+    for row in csvData.iterrows():
         ## Append relevant features to the featurelist, for vectorization. Transforms given text into a vector on the basis of frequency of each word.
         features.append("year" + str(row['year']) + " " + str(row['drive']).replace(' ','') + " " + str(row['engine']).replace('-','') + " " + " " + str(row['body']) + " " + str(row['fuelEfficiency']).replace(' ',''))
     
@@ -80,21 +80,21 @@ def get():
     cSim = cosine_similarity(featureMatrix)
 
     ## Get the shape of similarity matrix
-    csShape = cSim.shape
+    # csShape = cSim.shape
 
     ## This is the ID of the car the user's recommendations will be based upon.
     targetItemRow = csvData[csvData.id == targetID]
-    if len(targetItemRow.index) != 0:
-        print(targetItemRow['name'].values[0])
+    # if len(targetItemRow.index) != 0:
+        # print(targetItemRow['name'].values[0])
     #List of recommended cars for the similarity score
     scores = list(enumerate(cSim[targetID]))
     # print(targetCarName.values[0])
-    minPrice = targetPrice-(targetPrice*0.33)
+    minPrice = targetPrice-5000
     #Sort the list
     rankedScores = sorted(scores, key = lambda x:x[1], reverse = True)    
     rankedScores=rankedScores[1:]
     count = 0
-    desiredListings = 20
+    desiredListings = 10
     carList = []
     for item in rankedScores:
         itemID = item[0]
