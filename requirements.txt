@@ -4,3 +4,4 @@ gunicorn
 flask_restful==0.3.9
 pandas
 numpy
+# flask-cors
