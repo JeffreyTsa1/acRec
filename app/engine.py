@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import request
 from flask_restful import Resource, Api, reqparse
-import ast
 import json
 import pandas as pd
 import numpy as np
