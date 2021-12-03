@@ -1,5 +1,6 @@
 #wsgi - web server gateway interrface
-from app.engine import app
+from app.engine import app as application
 
-if __name__ == "__main__":
-    app.run()
+app = application.run()
+# if __name__ == "__main__":
+#     app.run()
