@@ -19,7 +19,7 @@ def get():
     targetPrice = int(request.args.get('budget'))
     combo = request.args.get('combo')
     df = pd.read_csv(r'app/kbbData.csv').dropna()
-    print(df)
+    # print(df)
     if targetPrice < 20000:
         # if combo == "RU":
         # elif combo == "RC":
