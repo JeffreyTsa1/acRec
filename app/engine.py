@@ -64,7 +64,7 @@ def get():
     listingCount, featureCount = df.shape
     csvData = df
     features = []
-    for row in csvData.iterrows():
+    for index, row in csvData.iterrows():
         ## Append relevant features to the featurelist, for vectorization. Transforms given text into a vector on the basis of frequency of each word.
         features.append("year" + str(row['year']) + " " + str(row['drive']).replace(' ','') + " " + str(row['engine']).replace('-','') + " " + " " + str(row['body']) + " " + str(row['fuelEfficiency']).replace(' ',''))
     
@@ -83,7 +83,7 @@ def get():
     # csShape = cSim.shape
 
     ## This is the ID of the car the user's recommendations will be based upon.
-    targetItemRow = csvData[csvData.id == targetID]
+    # targetItemRow = csvData[csvData.id == targetID]
     # if len(targetItemRow.index) != 0:
         # print(targetItemRow['name'].values[0])
     #List of recommended cars for the similarity score
