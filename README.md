@@ -1,7 +1,7 @@
 # recAPI
 Welcome to pt.2 of AutoCompare, a recommendation system built with Pandas, Scikit-learn, and deployed through Flask. 
 
-This is a slightly older version of the recommendation engine. I've made a few changes since this to the organization of the code, as well as my mathematical model, to eliminate some of the inefficiencies/memory leak and become more accurate.
+This is a slightly older version of the recommendation engine. I've made a few changes since this to the organization of the code, as well as my mathematical model, to eliminate some of the inefficiencies/memory leaks and become more accurate.
 
 File Structure:
 'engine.py' contains all of the main code.
